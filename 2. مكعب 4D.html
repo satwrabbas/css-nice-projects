@@ -1,0 +1,43 @@
+<div class="paradox-container">  
+  <div class="paradox-cube">  
+    <div class="face front"></div>  
+    <div class="face back"></div>  
+    <div class="face right"></div>  
+    <div class="face left"></div>  
+    <div class="face top"></div>  
+    <div class="face bottom"></div>  
+  </div>  
+</div>  
+
+<style>  
+.paradox-container {  
+  perspective: 2000px;  
+  height: 300px;  
+}  
+
+.paradox-cube {  
+  position: relative;  
+  transform-style: preserve-3d;  
+  animation: spin 20s infinite linear;  
+}  
+
+@keyframes spin {  
+  0% { transform: rotateX(0) rotateY(0) rotateZ(0); }  
+  100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg); }  
+}  
+
+.face {  
+  position: absolute;  
+  width: 200px;  
+  height: 200px;  
+  background: rgba(255,255,255,0.1);  
+  border: 2px solid;  
+  border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1;  
+  animation: borderPulse 2s infinite alternate;  
+}  
+
+/* تموضع الأوجه في الفراغ ثلاثي الأبعاد */  
+.front { transform: translateZ(100px); }  
+.back { transform: translateZ(-100px); }  
+/* تم حذف تموضع الأوجه الأخرى للإيجاز */  
+</style>  

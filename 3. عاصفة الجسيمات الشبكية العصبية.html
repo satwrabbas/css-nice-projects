@@ -1,0 +1,41 @@
+<div class="particle-universe"></div>  
+
+<style>  
+.particle-universe {  
+  height: 400px;  
+  position: relative;  
+  background: #000;  
+  overflow: hidden;  
+}  
+
+.particle {  
+  width: 3px;  
+  height: 3px;  
+  background: #0ff;  
+  position: absolute;  
+  animation: particleFloat 5s infinite;  
+  transition: all 0.5s;  
+}  
+
+.particle:hover {  
+  transform: scale(10);  
+  background: radial-gradient(#0ff, #f0f);  
+  box-shadow: 0 0 20px #fff;  
+}  
+
+@keyframes particleFloat {  
+  0%, 100% { transform: translate(0,0); }  
+  50% { transform: translate(50px, 50px); }  
+}  
+</style>  
+
+<script>  
+// إنشاء 100 جسيم  
+for(let i=0; i<100; i++) {  
+  const particle = document.createElement('div');  
+  particle.className = 'particle';  
+  particle.style.left = Math.random() * 100 + '%';  
+  particle.style.top = Math.random() * 100 + '%';  
+  document.querySelector('.particle-universe').appendChild(particle);  
+}  
+</script>  

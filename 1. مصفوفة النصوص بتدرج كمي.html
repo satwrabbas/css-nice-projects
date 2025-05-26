@@ -1,0 +1,27 @@
+<!DOCTYPE html>  
+<style>  
+.matrix-text {  
+  font-size: 5rem;  
+  background: linear-gradient(  
+    45deg,  
+    #ff00ff 20%,  
+    #00ffff 40%,  
+    #ff00ff 60%,  
+    #00ffff 80%  
+  );  
+  background-size: 400% 400%;  
+  -webkit-background-clip: text;  
+  background-clip: text;  
+  color: transparent;  
+  animation: matrixFlow 3s ease infinite;  
+  filter: drop-shadow(0 0 10px rgba(255,0,255,0.7))  
+          drop-shadow(0 0 20px rgba(0,255,255,0.7));  
+}  
+
+@keyframes matrixFlow {  
+  0% { background-position: 0% 50%; }  
+  50% { background-position: 100% 50%; }  
+  100% { background-position: 0% 50%; }  
+}  
+</style>  
+<h1 class="matrix-text">CODE ALCH3MY</h1>  
